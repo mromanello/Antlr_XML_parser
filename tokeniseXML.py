@@ -3,6 +3,7 @@ import antlr3
 from xmlLexer import xmlLexer
 from xmlParser import xmlParser
 from xmlTreeParser import xmlTreeParser
+from BeautifulSoup import BeautifulStoneSoup
 
 def init_logger():
     logger = logging.getLogger("Main")
@@ -18,18 +19,8 @@ def init_logger():
     logger.addHandler(ch)
     logger.info("Logger Initialised.")
 
-#from BeautifulSoup import BeautifulStoneSoup
-
-#out_file='/56k/phd/code/aph_sample.txt'
-#out_file='/56k/phd/code/aph_vol75_all.sgm.orig'
-#orig_file='/56k/phd/code/aph_vol75_all.sgm.orig'
-
 def run(i_file):
     temp = open(i_file,'r').read()
-    #f = codecs.open(o_file, encoding='utf-8', mode='w')
-    #f.write(BeautifulStoneSoup(temp,convertEntities=BeautifulStoneSoup.ALL_ENTITIES).prettify().decode('utf-8'))
-    #f.close()
-    #input = codecs.open(o_file, encoding='utf-8').read()
     char_stream = antlr3.ANTLRStringStream(temp)
     lexer = xmlLexer(char_stream)
     tokens = antlr3.CommonTokenStream(lexer)
