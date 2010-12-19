@@ -20,6 +20,7 @@ ch.setFormatter(formatter)
 self.logger.addHandler(ch)
 self.current_el = ""
 self.current_lang = "";
+self.tokens = []
 }
 
 document : element ;
@@ -40,6 +41,7 @@ element
             {
                 if(self.current_el=="resume"):
                   self.logger.debug("\%s in \%s"\% ($token.token, self.current_el));
+                  self.tokens.append(token.token);
                 }
             )*
             { 

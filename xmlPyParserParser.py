@@ -1,4 +1,4 @@
-# $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/56k/Documents/workspace/xml-antlr/src/xmlPyParser.g 2010-11-21 18:44:09
+# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlPyParser.g 2010-12-19 17:57:02
 
 import sys
 from antlr3 import *
@@ -25,16 +25,17 @@ tokenNames = [
 
 
 class xmlPyParserParser(Parser):
-    grammarFileName = "/Users/56k/Documents/workspace/xml-antlr/src/xmlPyParser.g"
-    antlr_version = version_str_to_tuple("3.2 Sep 23, 2009 12:02:23")
-    antlr_version_str = "3.2 Sep 23, 2009 12:02:23"
+    grammarFileName = "/Users/56k/Documents/workspace/24-11/xml_parser/xmlPyParser.g"
+    antlr_version = version_str_to_tuple("3.1.2")
+    antlr_version_str = "3.1.2"
     tokenNames = tokenNames
 
-    def __init__(self, input, state=None, *args, **kwargs):
+    def __init__(self, input, state=None):
         if state is None:
             state = RecognizerSharedState()
 
-        super(xmlPyParserParser, self).__init__(input, state, *args, **kwargs)
+        Parser.__init__(self, input, state)
+
 
 
 
@@ -59,7 +60,7 @@ class xmlPyParserParser(Parser):
 
     class a_return(ParserRuleReturnScope):
         def __init__(self):
-            super(xmlPyParserParser.a_return, self).__init__()
+            ParserRuleReturnScope.__init__(self)
 
             self.st = None
 
@@ -76,7 +77,7 @@ class xmlPyParserParser(Parser):
 
 
     # $ANTLR start "a"
-    # /Users/56k/Documents/workspace/xml-antlr/src/xmlPyParser.g:8:1: a : ID INT -> template(id=$ID.textint=$INT.text) \"id=<id>, int=<int>\";
+    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlPyParser.g:8:1: a : ID INT -> template(id=$ID.textint=$INT.text) \"id=<id>, int=<int>\";
     def a(self, ):
 
         retval = self.a_return()
@@ -87,8 +88,8 @@ class xmlPyParserParser(Parser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/xml-antlr/src/xmlPyParser.g:8:3: ( ID INT -> template(id=$ID.textint=$INT.text) \"id=<id>, int=<int>\")
-                # /Users/56k/Documents/workspace/xml-antlr/src/xmlPyParser.g:8:5: ID INT
+                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlPyParser.g:8:3: ( ID INT -> template(id=$ID.textint=$INT.text) \"id=<id>, int=<int>\")
+                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlPyParser.g:8:5: ID INT
                 pass 
                 ID1=self.match(self.input, ID, self.FOLLOW_ID_in_a29)
                 INT2=self.match(self.input, INT, self.FOLLOW_INT_in_a31)
@@ -114,6 +115,7 @@ class xmlPyParserParser(Parser):
         finally:
 
             pass
+
         return retval
 
     # $ANTLR end "a"

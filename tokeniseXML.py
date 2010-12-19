@@ -1,4 +1,4 @@
-import codecs,logging,sys
+import codecs,logging,sys,pickle
 import antlr3
 from xmlLexer import xmlLexer
 from xmlParser import xmlParser
@@ -16,10 +16,11 @@ def init_logger():
     # add formatter to ch
     ch.setFormatter(formatter)
     # add ch to logger
+    global logger
     logger.addHandler(ch)
     logger.info("Logger Initialised.")
 
-def run(i_file):
+def run(i_file,o_file):
     temp = open(i_file,'r').read()
     char_stream = antlr3.ANTLRStringStream(temp)
     lexer = xmlLexer(char_stream)
@@ -39,8 +40,13 @@ def run(i_file):
     nodes.setTokenStream(tokens)
     tp = xmlTreeParser(nodes)
     tp.document()
+    out = open(o_file,'wb')
+    pickle.dump(tp.tokens,out)
+    out.close()
+    logger.info("Pickled data written to file %s"%o_file)
 
 if __name__ == "__main__":
     init_logger()
     fname = sys.argv[1]
-    run(fname)
+    oname = sys.argv[2]
+    run(fname,oname)

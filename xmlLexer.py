@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g 2010-11-26 11:39:07
+# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g 2010-12-19 17:57:55
 
 import sys
 from antlr3 import *
