@@ -19,8 +19,10 @@ ch.setFormatter(formatter)
 # add ch to logger
 self.logger.addHandler(ch)
 self.current_el = ""
-self.current_lang = "";
+self.current_lang = ""
+self.instance_id=""
 self.tokens = []
+self.instances = {}
 }
 
 document : element ;
@@ -31,7 +33,10 @@ element
             }
             ( 
                 ^(ATTRIBUTE attrName=GENERIC_ID value=ATTR_VALUE) 
-                {#self.logger.debug(" "+$attrName.text+"="+$value.getText())
+                {
+                if($attrName.text=="notice.num"):
+                  self.instance_id=$value.getText()
+                  
                 }
             )*
             (element
@@ -40,12 +45,15 @@ element
             | ^(TEXT_TOKEN token=PCDATA_TOKEN)
             {
                 if(self.current_el=="resume"):
-                  self.logger.debug("\%s in \%s"\% ($token.token, self.current_el));
+                  self.logger.debug("\%s in \%s #\%s"\% ($token.token, self.current_el,self.instance_id));
                   self.tokens.append(token.token);
                 }
             )*
-            { 
-            #System.out.println("</"+$name.text+">"); 
+            {
+            if(self.current_el=="resume"):
+              self.instances[self.instance_id] = self.tokens
+              self.tokens = []
+              self.logger.debug("\%s",self.instances)
             }
         )
     ;

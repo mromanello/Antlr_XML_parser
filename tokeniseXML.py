@@ -6,6 +6,7 @@ from xmlTreeParser import xmlTreeParser
 from BeautifulSoup import BeautifulStoneSoup
 
 def init_logger():
+    global logger
     logger = logging.getLogger("Main")
     logger.setLevel(logging.DEBUG)
     # create console handler and set level to debug
@@ -16,7 +17,6 @@ def init_logger():
     # add formatter to ch
     ch.setFormatter(formatter)
     # add ch to logger
-    global logger
     logger.addHandler(ch)
     logger.info("Logger Initialised.")
 
@@ -41,7 +41,7 @@ def run(i_file,o_file):
     tp = xmlTreeParser(nodes)
     tp.document()
     out = open(o_file,'wb')
-    pickle.dump(tp.tokens,out)
+    pickle.dump(tp.instances,out)
     out.close()
     logger.info("Pickled data written to file %s"%o_file)
 
