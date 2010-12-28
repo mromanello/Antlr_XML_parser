@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g 2010-12-28 14:38:50
+# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g 2010-12-28 23:56:41
 
 import sys
 from antlr3 import *
@@ -209,7 +209,7 @@ class xmlTreeParser(TreeParser):
                         self.match(self.input, UP, None)
                         #action start
                                      
-                        if(self.current_el=="resume"):
+                        if(self.current_el.lower()=="resume"):
                           self.logger.debug("%s in %s #%s"% (token.token, self.current_el,self.instance_id));
                           self.tokens.append(token.token);
                                         

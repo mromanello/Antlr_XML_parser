@@ -44,7 +44,7 @@ element
                 
             | ^(TEXT_TOKEN token=PCDATA_TOKEN)
             {
-                if(self.current_el=="resume"):
+                if(self.current_el.lower()=="resume"):
                   self.logger.debug("\%s in \%s #\%s"\% ($token.token, self.current_el,self.instance_id));
                   self.tokens.append(token.token);
                 }
