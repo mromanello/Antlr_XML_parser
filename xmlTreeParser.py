@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g 2010-12-28 23:56:41
+# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g 2011-01-19 12:37:45
 
 import sys
 from antlr3 import *
@@ -73,6 +73,8 @@ class xmlTreeParser(TreeParser):
         self.instance_id=""
         self.tokens = []
         self.instances = {}
+        self.is_beta_greek = False
+        self.NBSP = "&nbsp;"
 
 
 
@@ -85,13 +87,13 @@ class xmlTreeParser(TreeParser):
 
 
     # $ANTLR start "document"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:28:1: document : element ;
+    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:30:1: document : element ;
     def document(self, ):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:28:10: ( element )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:28:12: element
+                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:30:10: ( element )
+                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:30:12: element
                 pass 
                 self._state.following.append(self.FOLLOW_element_in_document53)
                 self.element()
@@ -114,7 +116,7 @@ class xmlTreeParser(TreeParser):
 
 
     # $ANTLR start "element"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:30:1: element : ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* ) ;
+    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:32:1: element : ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* ) ;
     def element(self, ):
 
         name = None
@@ -124,8 +126,8 @@ class xmlTreeParser(TreeParser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:31:5: ( ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* ) )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:31:7: ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* )
+                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:33:5: ( ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* ) )
+                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:33:7: ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* )
                 pass 
                 self.match(self.input, ELEMENT, self.FOLLOW_ELEMENT_in_element68)
 
@@ -135,7 +137,7 @@ class xmlTreeParser(TreeParser):
                 self.current_el = name.getText()
                             
                 #action end
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:34:13: ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )*
+                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:36:13: ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )*
                 while True: #loop1
                     alt1 = 2
                     LA1_0 = self.input.LA(1)
@@ -145,7 +147,7 @@ class xmlTreeParser(TreeParser):
 
 
                     if alt1 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:35:17: ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE )
+                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:37:17: ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE )
                         pass 
                         self.match(self.input, ATTRIBUTE, self.FOLLOW_ATTRIBUTE_in_element121)
 
@@ -158,7 +160,8 @@ class xmlTreeParser(TreeParser):
                                          
                         if(attrName.text=="notice.num"):
                           self.instance_id=value.getText()
-                                          
+                        elif(self.current_el=="lang" and attrName.text.lower=="police" and value=="betagr"):
+                          self.is_beta_greek = True
                                         
                         #action end
 
@@ -167,7 +170,7 @@ class xmlTreeParser(TreeParser):
                         break #loop1
 
 
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:42:13: ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )*
+                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:45:13: ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )*
                 while True: #loop2
                     alt2 = 4
                     LA2 = self.input.LA(1)
@@ -179,7 +182,7 @@ class xmlTreeParser(TreeParser):
                         alt2 = 3
 
                     if alt2 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:42:14: element
+                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:45:14: element
                         pass 
                         self._state.following.append(self.FOLLOW_element_in_element179)
                         self.element()
@@ -188,7 +191,7 @@ class xmlTreeParser(TreeParser):
 
 
                     elif alt2 == 2:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:43:15: ^( SPACE_TOKEN token= PCDATA_TOKEN )
+                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:46:15: ^( SPACE_TOKEN token= PCDATA_TOKEN )
                         pass 
                         self.match(self.input, SPACE_TOKEN, self.FOLLOW_SPACE_TOKEN_in_element196)
 
@@ -199,7 +202,7 @@ class xmlTreeParser(TreeParser):
 
 
                     elif alt2 == 3:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:45:15: ^( TEXT_TOKEN token= PCDATA_TOKEN )
+                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:48:15: ^( TEXT_TOKEN token= PCDATA_TOKEN )
                         pass 
                         self.match(self.input, TEXT_TOKEN, self.FOLLOW_TEXT_TOKEN_in_element235)
 
@@ -210,8 +213,34 @@ class xmlTreeParser(TreeParser):
                         #action start
                                      
                         if(self.current_el.lower()=="resume"):
-                          self.logger.debug("%s in %s #%s"% (token.token, self.current_el,self.instance_id));
-                          self.tokens.append(token.token);
+                          if(token.token.text.find(self.NBSP)== -1):
+                           self.logger.debug("%s in %s #%s"% (token.token, self.current_el,self.instance_id));
+                           #self.logger.debug("%s"% (dir(token.token)));
+                           tok = {}
+                           tok["start"]=token.token.start
+                           tok["end"]=token.token.stop
+                           tok["otext"]=token.token.text
+                           from BeautifulSoup import BeautifulStoneSoup
+                           tok["utext"]=BeautifulStoneSoup(tok["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
+                           self.tokens.append(tok);
+                            # TODO: add a check for self.current_el="lang"
+                          elif(token.token.text.find("&nbsp;")!= -1):
+                            # 1st token
+                            tok1 = {}
+                            idx = token.token.text.find("&nbsp;")
+                            tok1["otext"]=token.token.text[:idx]
+                            tok1["utext"]=BeautifulStoneSoup(tok1["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
+                            tok1["start"]=token.token.start
+                            tok1["end"]=token.token.start + (idx-1)
+                            self.tokens.append(tok1);
+                            # 2nd token
+                            tok2 = {}
+                            idx = token.token.text.find("&nbsp;")
+                            tok2["otext"]=token.token.text[idx+len("&nbsp;"):len(token.token.text)]
+                            tok2["utext"]=BeautifulStoneSoup(tok2["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
+                            tok2["start"]=token.token.start+idx+len("&nbsp;")
+                            tok2["end"]=token.token.stop
+                            self.tokens.append(tok2);
                                         
                         #action end
 
@@ -222,10 +251,10 @@ class xmlTreeParser(TreeParser):
 
                 #action start
                              
-                if(self.current_el=="resume"):
+                if(self.current_el=="resume" and len(self.tokens) > 0):
                   self.instances[self.instance_id] = self.tokens
-                  self.tokens = []
                   self.logger.debug("%s",self.instances)
+                self.tokens = []
                             
                 #action end
 

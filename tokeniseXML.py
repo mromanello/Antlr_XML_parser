@@ -1,4 +1,4 @@
-import codecs,logging,sys,pickle
+import codecs,logging,sys,pickle,pprint
 import antlr3
 from xmlLexer import xmlLexer
 from xmlParser import xmlParser
@@ -40,10 +40,20 @@ def run(i_file,o_file):
     nodes.setTokenStream(tokens)
     tp = xmlTreeParser(nodes)
     tp.document()
+    """
     out = open(o_file,'wb')
     pickle.dump(tp.instances,out)
     out.close()
     logger.info("Pickled data written to file %s"%o_file)
+    """
+    #open(o_file,'w').write(str(tp.instances).decode("UTF-8"))
+    pprint.pprint(tp.instances)
+    temp = open(i_file,'r')
+    for inst in tp.instances:
+		for tok in tp.instances[inst]:
+			temp.seek(tok["start"])
+			print "\"%s\" == \"%s\""%(tok["utext"], temp.read(tok["end"]-tok["start"]+1))
+    
 
 if __name__ == "__main__":
     init_logger()
