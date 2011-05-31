@@ -36,7 +36,7 @@ element
             ( 
                 ^(ATTRIBUTE attrName=GENERIC_ID value=ATTR_VALUE) 
                 {
-                if($attrName.text=="notice.num"):
+                if($attrName.text.lower()=="notice.num"):
                   self.instance_id=$value.getText()
                 elif(self.current_el=="lang" and $attrName.text.lower=="police" and $value=="betagr"):
                   self.is_beta_greek = True
@@ -79,7 +79,7 @@ element
                 }
             )*
             {
-            if(self.current_el=="resume" and len(self.tokens) > 0):
+            if(self.current_el.lower()=="resume" and len(self.tokens) > 0):
               self.instances[self.instance_id] = self.tokens
               self.logger.debug("\%s",self.instances)
             self.tokens = []
