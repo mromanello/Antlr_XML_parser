@@ -47,7 +47,9 @@ def run(i_file,o_file):
     out.close()
     logger.info("Pickled data written to file %s"%o_file)
     """
-    open(o_file,'w').write(simplejson.dumps(tp.instances).decode("UTF-8"))
+    fout = open(o_file,'w')
+    fout.write(simplejson.dumps(tp.instances).decode("UTF-8"))
+    fout.close()
     print(simplejson.dumps(tp.instances))
     pprint.pprint(tp.instances)
     temp = open(i_file,'r')

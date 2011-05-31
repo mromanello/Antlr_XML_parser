@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g 2011-01-19 12:37:43
+# $ANTLR 3.1.2 xmlLexer.g 2011-05-31 22:54:23
 
 import sys
 from antlr3 import *
@@ -27,7 +27,7 @@ NAMECHAR=12
 
 class xmlLexer(Lexer):
 
-    grammarFileName = "/Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g"
+    grammarFileName = "xmlLexer.g"
     antlr_version = version_str_to_tuple("3.1.2")
     antlr_version_str = "3.1.2"
 
@@ -76,8 +76,8 @@ class xmlLexer(Lexer):
             _type = TAG_START_OPEN
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:25:16: ({...}? => '<' )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:25:18: {...}? => '<'
+            # xmlLexer.g:25:16: ({...}? => '<' )
+            # xmlLexer.g:25:18: {...}? => '<'
             pass 
             if not ((not self.tagMode )):
                 raise FailedPredicateException(self.input, "TAG_START_OPEN", " not self.tagMode ")
@@ -107,8 +107,8 @@ class xmlLexer(Lexer):
             _type = TAG_END_OPEN
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:26:14: ({...}? => '</' )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:26:16: {...}? => '</'
+            # xmlLexer.g:26:14: ({...}? => '</' )
+            # xmlLexer.g:26:16: {...}? => '</'
             pass 
             if not ((not self.tagMode )):
                 raise FailedPredicateException(self.input, "TAG_END_OPEN", "  not self.tagMode ")
@@ -138,8 +138,8 @@ class xmlLexer(Lexer):
             _type = TAG_CLOSE
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:27:11: ({...}? => '>' )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:27:13: {...}? => '>'
+            # xmlLexer.g:27:11: ({...}? => '>' )
+            # xmlLexer.g:27:13: {...}? => '>'
             pass 
             if not ((self.tagMode )):
                 raise FailedPredicateException(self.input, "TAG_CLOSE", " self.tagMode ")
@@ -169,8 +169,8 @@ class xmlLexer(Lexer):
             _type = TAG_EMPTY_CLOSE
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:28:17: ({...}? => '/>' )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:28:19: {...}? => '/>'
+            # xmlLexer.g:28:17: ({...}? => '/>' )
+            # xmlLexer.g:28:19: {...}? => '/>'
             pass 
             if not ((self.tagMode )):
                 raise FailedPredicateException(self.input, "TAG_EMPTY_CLOSE", " self.tagMode ")
@@ -200,8 +200,8 @@ class xmlLexer(Lexer):
             _type = ATTR_EQ
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:30:9: ({...}? => '=' )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:30:11: {...}? => '='
+            # xmlLexer.g:30:9: ({...}? => '=' )
+            # xmlLexer.g:30:11: {...}? => '='
             pass 
             if not ((self.tagMode )):
                 raise FailedPredicateException(self.input, "ATTR_EQ", " self.tagMode ")
@@ -228,13 +228,13 @@ class xmlLexer(Lexer):
             _type = ATTR_VALUE
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:35:12: ({...}? => ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' ) )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:35:14: {...}? => ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
+            # xmlLexer.g:35:12: ({...}? => ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' ) )
+            # xmlLexer.g:35:14: {...}? => ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
             pass 
             if not ((self.tagMode )):
                 raise FailedPredicateException(self.input, "ATTR_VALUE", " self.tagMode ")
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:36:9: ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
+            # xmlLexer.g:36:9: ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
             alt3 = 2
             LA3_0 = self.input.LA(1)
 
@@ -248,10 +248,10 @@ class xmlLexer(Lexer):
                 raise nvae
 
             if alt3 == 1:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:36:11: '\"' (~ '\"' )* '\"'
+                # xmlLexer.g:36:11: '\"' (~ '\"' )* '\"'
                 pass 
                 self.match(34)
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:36:15: (~ '\"' )*
+                # xmlLexer.g:36:15: (~ '\"' )*
                 while True: #loop1
                     alt1 = 2
                     LA1_0 = self.input.LA(1)
@@ -261,7 +261,7 @@ class xmlLexer(Lexer):
 
 
                     if alt1 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:36:16: ~ '\"'
+                        # xmlLexer.g:36:16: ~ '\"'
                         pass 
                         if (0 <= self.input.LA(1) <= 33) or (35 <= self.input.LA(1) <= 65535):
                             self.input.consume()
@@ -280,10 +280,10 @@ class xmlLexer(Lexer):
 
 
             elif alt3 == 2:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:37:11: '\\'' (~ '\\'' )* '\\''
+                # xmlLexer.g:37:11: '\\'' (~ '\\'' )* '\\''
                 pass 
                 self.match(39)
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:37:16: (~ '\\'' )*
+                # xmlLexer.g:37:16: (~ '\\'' )*
                 while True: #loop2
                     alt2 = 2
                     LA2_0 = self.input.LA(1)
@@ -293,7 +293,7 @@ class xmlLexer(Lexer):
 
 
                     if alt2 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:37:17: ~ '\\''
+                        # xmlLexer.g:37:17: ~ '\\''
                         pass 
                         if (0 <= self.input.LA(1) <= 38) or (40 <= self.input.LA(1) <= 65535):
                             self.input.consume()
@@ -333,13 +333,13 @@ class xmlLexer(Lexer):
             _type = PCDATA_TOKEN
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:43:13: ({...}? => (~ ( '<' | ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+ )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:43:14: {...}? => (~ ( '<' | ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+
+            # xmlLexer.g:43:13: ({...}? => (~ ( '<' | ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+ )
+            # xmlLexer.g:43:14: {...}? => (~ ( '<' | ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+
             pass 
             if not ((not self.tagMode )):
                 raise FailedPredicateException(self.input, "PCDATA_TOKEN", " not self.tagMode ")
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:43:38: (~ ( '<' | ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+
+            # xmlLexer.g:43:38: (~ ( '<' | ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+
             cnt4 = 0
             while True: #loop4
                 alt4 = 2
@@ -350,7 +350,7 @@ class xmlLexer(Lexer):
 
 
                 if alt4 == 1:
-                    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:44:4: ~ ( '<' | ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+                    # xmlLexer.g:44:4: ~ ( '<' | ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
                     pass 
                     if (0 <= self.input.LA(1) <= 8) or self.input.LA(1) == 11 or (14 <= self.input.LA(1) <= 31) or (33 <= self.input.LA(1) <= 59) or (61 <= self.input.LA(1) <= 65535):
                         self.input.consume()
@@ -392,8 +392,8 @@ class xmlLexer(Lexer):
             _type = GENERIC_ID
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:48:5: ({...}? => ( LETTER | '_' | ':' ) ( options {greedy=True; } : NAMECHAR )* )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:48:7: {...}? => ( LETTER | '_' | ':' ) ( options {greedy=True; } : NAMECHAR )*
+            # xmlLexer.g:48:5: ({...}? => ( LETTER | '_' | ':' ) ( options {greedy=True; } : NAMECHAR )* )
+            # xmlLexer.g:48:7: {...}? => ( LETTER | '_' | ':' ) ( options {greedy=True; } : NAMECHAR )*
             pass 
             if not ((self.tagMode )):
                 raise FailedPredicateException(self.input, "GENERIC_ID", " self.tagMode ")
@@ -405,7 +405,7 @@ class xmlLexer(Lexer):
                 self.recover(mse)
                 raise mse
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:49:29: ( options {greedy=True; } : NAMECHAR )*
+            # xmlLexer.g:49:29: ( options {greedy=True; } : NAMECHAR )*
             while True: #loop5
                 alt5 = 2
                 LA5_0 = self.input.LA(1)
@@ -415,7 +415,7 @@ class xmlLexer(Lexer):
 
 
                 if alt5 == 1:
-                    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:49:56: NAMECHAR
+                    # xmlLexer.g:49:56: NAMECHAR
                     pass 
                     self.mNAMECHAR()
 
@@ -442,8 +442,8 @@ class xmlLexer(Lexer):
     def mNAMECHAR(self, ):
 
         try:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:53:3: ( LETTER | DIGIT | '.' | '-' | '_' | ':' )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:
+            # xmlLexer.g:53:3: ( LETTER | DIGIT | '.' | '-' | '_' | ':' )
+            # xmlLexer.g:
             pass 
             if (45 <= self.input.LA(1) <= 46) or (48 <= self.input.LA(1) <= 58) or (65 <= self.input.LA(1) <= 90) or self.input.LA(1) == 95 or (97 <= self.input.LA(1) <= 122):
                 self.input.consume()
@@ -468,8 +468,8 @@ class xmlLexer(Lexer):
     def mDIGIT(self, ):
 
         try:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:57:3: ( '0' .. '9' )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:57:5: '0' .. '9'
+            # xmlLexer.g:57:3: ( '0' .. '9' )
+            # xmlLexer.g:57:5: '0' .. '9'
             pass 
             self.matchRange(48, 57)
 
@@ -488,8 +488,8 @@ class xmlLexer(Lexer):
     def mLETTER(self, ):
 
         try:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:61:3: ( 'a' .. 'z' | 'A' .. 'Z' )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:
+            # xmlLexer.g:61:3: ( 'a' .. 'z' | 'A' .. 'Z' )
+            # xmlLexer.g:
             pass 
             if (65 <= self.input.LA(1) <= 90) or (97 <= self.input.LA(1) <= 122):
                 self.input.consume()
@@ -517,8 +517,8 @@ class xmlLexer(Lexer):
             _type = WS
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:65:5: ({...}? => ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:65:8: {...}? => ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+            # xmlLexer.g:65:5: ({...}? => ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+            # xmlLexer.g:65:8: {...}? => ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
             pass 
             if not ((self.tagMode )):
                 raise FailedPredicateException(self.input, "WS", " self.tagMode ")
@@ -554,13 +554,13 @@ class xmlLexer(Lexer):
             _type = PCDATA_SPACE
             _channel = DEFAULT_CHANNEL
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:69:13: ({...}? => ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+ )
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:69:14: {...}? => ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+
+            # xmlLexer.g:69:13: ({...}? => ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+ )
+            # xmlLexer.g:69:14: {...}? => ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+
             pass 
             if not ((not self.tagMode )):
                 raise FailedPredicateException(self.input, "PCDATA_SPACE", " not self.tagMode ")
 
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:69:38: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+
+            # xmlLexer.g:69:38: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )+
             cnt6 = 0
             while True: #loop6
                 alt6 = 2
@@ -571,7 +571,7 @@ class xmlLexer(Lexer):
 
 
                 if alt6 == 1:
-                    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:70:4: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+                    # xmlLexer.g:70:4: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
                     pass 
                     if (9 <= self.input.LA(1) <= 10) or (12 <= self.input.LA(1) <= 13) or self.input.LA(1) == 32:
                         self.input.consume()
@@ -607,65 +607,65 @@ class xmlLexer(Lexer):
 
 
     def mTokens(self):
-        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:8: ( TAG_START_OPEN | TAG_END_OPEN | TAG_CLOSE | TAG_EMPTY_CLOSE | ATTR_EQ | ATTR_VALUE | PCDATA_TOKEN | GENERIC_ID | WS | PCDATA_SPACE )
+        # xmlLexer.g:1:8: ( TAG_START_OPEN | TAG_END_OPEN | TAG_CLOSE | TAG_EMPTY_CLOSE | ATTR_EQ | ATTR_VALUE | PCDATA_TOKEN | GENERIC_ID | WS | PCDATA_SPACE )
         alt7 = 10
         alt7 = self.dfa7.predict(self.input)
         if alt7 == 1:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:10: TAG_START_OPEN
+            # xmlLexer.g:1:10: TAG_START_OPEN
             pass 
             self.mTAG_START_OPEN()
 
 
         elif alt7 == 2:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:25: TAG_END_OPEN
+            # xmlLexer.g:1:25: TAG_END_OPEN
             pass 
             self.mTAG_END_OPEN()
 
 
         elif alt7 == 3:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:38: TAG_CLOSE
+            # xmlLexer.g:1:38: TAG_CLOSE
             pass 
             self.mTAG_CLOSE()
 
 
         elif alt7 == 4:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:48: TAG_EMPTY_CLOSE
+            # xmlLexer.g:1:48: TAG_EMPTY_CLOSE
             pass 
             self.mTAG_EMPTY_CLOSE()
 
 
         elif alt7 == 5:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:64: ATTR_EQ
+            # xmlLexer.g:1:64: ATTR_EQ
             pass 
             self.mATTR_EQ()
 
 
         elif alt7 == 6:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:72: ATTR_VALUE
+            # xmlLexer.g:1:72: ATTR_VALUE
             pass 
             self.mATTR_VALUE()
 
 
         elif alt7 == 7:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:83: PCDATA_TOKEN
+            # xmlLexer.g:1:83: PCDATA_TOKEN
             pass 
             self.mPCDATA_TOKEN()
 
 
         elif alt7 == 8:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:96: GENERIC_ID
+            # xmlLexer.g:1:96: GENERIC_ID
             pass 
             self.mGENERIC_ID()
 
 
         elif alt7 == 9:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:107: WS
+            # xmlLexer.g:1:107: WS
             pass 
             self.mWS()
 
 
         elif alt7 == 10:
-            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlLexer.g:1:110: PCDATA_SPACE
+            # xmlLexer.g:1:110: PCDATA_SPACE
             pass 
             self.mPCDATA_SPACE()
 

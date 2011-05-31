@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g 2010-12-19 17:57:07
+# $ANTLR 3.1.2 xmlParser.g 2011-05-31 22:54:24
 
 import sys
 from antlr3 import *
@@ -43,7 +43,7 @@ tokenNames = [
 
 
 class xmlParser(Parser):
-    grammarFileName = "/Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g"
+    grammarFileName = "xmlParser.g"
     antlr_version = version_str_to_tuple("3.1.2")
     antlr_version_str = "3.1.2"
     tokenNames = tokenNames
@@ -110,7 +110,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "document"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:33:1: document : element ;
+    # xmlParser.g:33:1: document : element ;
     def document(self, ):
 
         retval = self.document_return()
@@ -124,8 +124,8 @@ class xmlParser(Parser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:33:10: ( element )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:33:12: element
+                # xmlParser.g:33:10: ( element )
+                # xmlParser.g:33:12: element
                 pass 
                 root_0 = self._adaptor.nil()
 
@@ -166,7 +166,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "element"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:35:1: element : (tag= startTag ( element | text )* endTag | emptyElement ) ;
+    # xmlParser.g:35:1: element : (tag= startTag ( element | text )* endTag | emptyElement ) ;
     def element(self, ):
 
         retval = self.element_return()
@@ -188,23 +188,23 @@ class xmlParser(Parser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:36:5: ( (tag= startTag ( element | text )* endTag | emptyElement ) )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:36:7: (tag= startTag ( element | text )* endTag | emptyElement )
+                # xmlParser.g:36:5: ( (tag= startTag ( element | text )* endTag | emptyElement ) )
+                # xmlParser.g:36:7: (tag= startTag ( element | text )* endTag | emptyElement )
                 pass 
                 root_0 = self._adaptor.nil()
 
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:36:7: (tag= startTag ( element | text )* endTag | emptyElement )
+                # xmlParser.g:36:7: (tag= startTag ( element | text )* endTag | emptyElement )
                 alt2 = 2
                 alt2 = self.dfa2.predict(self.input)
                 if alt2 == 1:
-                    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:36:9: tag= startTag ( element | text )* endTag
+                    # xmlParser.g:36:9: tag= startTag ( element | text )* endTag
                     pass 
                     self._state.following.append(self.FOLLOW_startTag_in_element103)
                     tag = self.startTag()
 
                     self._state.following.pop()
                     root_0 = self._adaptor.becomeRoot(tag.tree, root_0)
-                    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:37:13: ( element | text )*
+                    # xmlParser.g:37:13: ( element | text )*
                     while True: #loop1
                         alt1 = 3
                         LA1_0 = self.input.LA(1)
@@ -216,7 +216,7 @@ class xmlParser(Parser):
 
 
                         if alt1 == 1:
-                            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:37:14: element
+                            # xmlParser.g:37:14: element
                             pass 
                             self._state.following.append(self.FOLLOW_element_in_element119)
                             element2 = self.element()
@@ -226,7 +226,7 @@ class xmlParser(Parser):
 
 
                         elif alt1 == 2:
-                            # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:38:15: text
+                            # xmlParser.g:38:15: text
                             pass 
                             self._state.following.append(self.FOLLOW_text_in_element135)
                             text3 = self.text()
@@ -246,7 +246,7 @@ class xmlParser(Parser):
 
 
                 elif alt2 == 2:
-                    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:41:11: emptyElement
+                    # xmlParser.g:41:11: emptyElement
                     pass 
                     self._state.following.append(self.FOLLOW_emptyElement_in_element177)
                     emptyElement5 = self.emptyElement()
@@ -288,7 +288,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "text"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:45:1: text : ( token | space_token )+ ;
+    # xmlParser.g:45:1: text : ( token | space_token )+ ;
     def text(self, ):
 
         retval = self.text_return()
@@ -304,12 +304,12 @@ class xmlParser(Parser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:45:5: ( ( token | space_token )+ )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:45:7: ( token | space_token )+
+                # xmlParser.g:45:5: ( ( token | space_token )+ )
+                # xmlParser.g:45:7: ( token | space_token )+
                 pass 
                 root_0 = self._adaptor.nil()
 
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:45:7: ( token | space_token )+
+                # xmlParser.g:45:7: ( token | space_token )+
                 cnt3 = 0
                 while True: #loop3
                     alt3 = 3
@@ -322,7 +322,7 @@ class xmlParser(Parser):
 
 
                     if alt3 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:45:8: token
+                        # xmlParser.g:45:8: token
                         pass 
                         self._state.following.append(self.FOLLOW_token_in_text202)
                         token6 = self.token()
@@ -332,7 +332,7 @@ class xmlParser(Parser):
 
 
                     elif alt3 == 2:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:45:16: space_token
+                        # xmlParser.g:45:16: space_token
                         pass 
                         self._state.following.append(self.FOLLOW_space_token_in_text206)
                         space_token7 = self.space_token()
@@ -383,7 +383,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "space_token"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:48:1: space_token : ( PCDATA_SPACE ) -> ^( TEXT_TOKEN PCDATA_TOKEN ) ;
+    # xmlParser.g:48:1: space_token : ( PCDATA_SPACE ) -> ^( TEXT_TOKEN PCDATA_TOKEN ) ;
     def space_token(self, ):
 
         retval = self.space_token_return()
@@ -398,11 +398,11 @@ class xmlParser(Parser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:48:12: ( ( PCDATA_SPACE ) -> ^( TEXT_TOKEN PCDATA_TOKEN ) )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:48:14: ( PCDATA_SPACE )
+                # xmlParser.g:48:12: ( ( PCDATA_SPACE ) -> ^( TEXT_TOKEN PCDATA_TOKEN ) )
+                # xmlParser.g:48:14: ( PCDATA_SPACE )
                 pass 
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:48:14: ( PCDATA_SPACE )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:48:15: PCDATA_SPACE
+                # xmlParser.g:48:14: ( PCDATA_SPACE )
+                # xmlParser.g:48:15: PCDATA_SPACE
                 pass 
                 PCDATA_SPACE8=self.match(self.input, PCDATA_SPACE, self.FOLLOW_PCDATA_SPACE_in_space_token217) 
                 stream_PCDATA_SPACE.add(PCDATA_SPACE8)
@@ -428,7 +428,7 @@ class xmlParser(Parser):
 
                 root_0 = self._adaptor.nil()
                 # 50:1: -> ^( TEXT_TOKEN PCDATA_TOKEN )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:50:4: ^( TEXT_TOKEN PCDATA_TOKEN )
+                # xmlParser.g:50:4: ^( TEXT_TOKEN PCDATA_TOKEN )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(self._adaptor.createFromType(TEXT_TOKEN, "TEXT_TOKEN"), root_1)
 
@@ -471,7 +471,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "token"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:54:1: token : (tok= PCDATA_TOKEN ( PCDATA_SPACE )* ) -> ^( SPACE_TOKEN PCDATA_TOKEN ) ;
+    # xmlParser.g:54:1: token : (tok= PCDATA_TOKEN ( PCDATA_SPACE )* ) -> ^( SPACE_TOKEN PCDATA_TOKEN ) ;
     def token(self, ):
 
         retval = self.token_return()
@@ -489,15 +489,15 @@ class xmlParser(Parser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:54:6: ( (tok= PCDATA_TOKEN ( PCDATA_SPACE )* ) -> ^( SPACE_TOKEN PCDATA_TOKEN ) )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:54:8: (tok= PCDATA_TOKEN ( PCDATA_SPACE )* )
+                # xmlParser.g:54:6: ( (tok= PCDATA_TOKEN ( PCDATA_SPACE )* ) -> ^( SPACE_TOKEN PCDATA_TOKEN ) )
+                # xmlParser.g:54:8: (tok= PCDATA_TOKEN ( PCDATA_SPACE )* )
                 pass 
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:54:8: (tok= PCDATA_TOKEN ( PCDATA_SPACE )* )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:54:9: tok= PCDATA_TOKEN ( PCDATA_SPACE )*
+                # xmlParser.g:54:8: (tok= PCDATA_TOKEN ( PCDATA_SPACE )* )
+                # xmlParser.g:54:9: tok= PCDATA_TOKEN ( PCDATA_SPACE )*
                 pass 
                 tok=self.match(self.input, PCDATA_TOKEN, self.FOLLOW_PCDATA_TOKEN_in_token239) 
                 stream_PCDATA_TOKEN.add(tok)
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:54:26: ( PCDATA_SPACE )*
+                # xmlParser.g:54:26: ( PCDATA_SPACE )*
                 while True: #loop4
                     alt4 = 2
                     LA4_0 = self.input.LA(1)
@@ -507,7 +507,7 @@ class xmlParser(Parser):
 
 
                     if alt4 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:54:26: PCDATA_SPACE
+                        # xmlParser.g:54:26: PCDATA_SPACE
                         pass 
                         PCDATA_SPACE9=self.match(self.input, PCDATA_SPACE, self.FOLLOW_PCDATA_SPACE_in_token241) 
                         stream_PCDATA_SPACE.add(PCDATA_SPACE9)
@@ -539,7 +539,7 @@ class xmlParser(Parser):
 
                 root_0 = self._adaptor.nil()
                 # 55:1: -> ^( SPACE_TOKEN PCDATA_TOKEN )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:55:4: ^( SPACE_TOKEN PCDATA_TOKEN )
+                # xmlParser.g:55:4: ^( SPACE_TOKEN PCDATA_TOKEN )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(self._adaptor.createFromType(SPACE_TOKEN, "SPACE_TOKEN"), root_1)
 
@@ -582,7 +582,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "startTag"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:59:1: startTag : TAG_START_OPEN gid= GENERIC_ID ( attribute )* TAG_CLOSE -> ^( ELEMENT GENERIC_ID ( attribute )* ) ;
+    # xmlParser.g:59:1: startTag : TAG_START_OPEN gid= GENERIC_ID ( attribute )* TAG_CLOSE -> ^( ELEMENT GENERIC_ID ( attribute )* ) ;
     def startTag(self, ):
 
         retval = self.startTag_return()
@@ -605,14 +605,14 @@ class xmlParser(Parser):
         stream_attribute = RewriteRuleSubtreeStream(self._adaptor, "rule attribute")
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:59:10: ( TAG_START_OPEN gid= GENERIC_ID ( attribute )* TAG_CLOSE -> ^( ELEMENT GENERIC_ID ( attribute )* ) )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:59:12: TAG_START_OPEN gid= GENERIC_ID ( attribute )* TAG_CLOSE
+                # xmlParser.g:59:10: ( TAG_START_OPEN gid= GENERIC_ID ( attribute )* TAG_CLOSE -> ^( ELEMENT GENERIC_ID ( attribute )* ) )
+                # xmlParser.g:59:12: TAG_START_OPEN gid= GENERIC_ID ( attribute )* TAG_CLOSE
                 pass 
                 TAG_START_OPEN10=self.match(self.input, TAG_START_OPEN, self.FOLLOW_TAG_START_OPEN_in_startTag261) 
                 stream_TAG_START_OPEN.add(TAG_START_OPEN10)
                 gid=self.match(self.input, GENERIC_ID, self.FOLLOW_GENERIC_ID_in_startTag265) 
                 stream_GENERIC_ID.add(gid)
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:59:42: ( attribute )*
+                # xmlParser.g:59:42: ( attribute )*
                 while True: #loop5
                     alt5 = 2
                     LA5_0 = self.input.LA(1)
@@ -622,7 +622,7 @@ class xmlParser(Parser):
 
 
                     if alt5 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:59:42: attribute
+                        # xmlParser.g:59:42: attribute
                         pass 
                         self._state.following.append(self.FOLLOW_attribute_in_startTag267)
                         attribute11 = self.attribute()
@@ -645,7 +645,7 @@ class xmlParser(Parser):
                 #action end
 
                 # AST Rewrite
-                # elements: GENERIC_ID, attribute
+                # elements: attribute, GENERIC_ID
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -662,12 +662,12 @@ class xmlParser(Parser):
 
                 root_0 = self._adaptor.nil()
                 # 64:9: -> ^( ELEMENT GENERIC_ID ( attribute )* )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:64:12: ^( ELEMENT GENERIC_ID ( attribute )* )
+                # xmlParser.g:64:12: ^( ELEMENT GENERIC_ID ( attribute )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(self._adaptor.createFromType(ELEMENT, "ELEMENT"), root_1)
 
                 self._adaptor.addChild(root_1, stream_GENERIC_ID.nextNode())
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:64:33: ( attribute )*
+                # xmlParser.g:64:33: ( attribute )*
                 while stream_attribute.hasNext():
                     self._adaptor.addChild(root_1, stream_attribute.nextTree())
 
@@ -711,7 +711,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "attribute"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:67:1: attribute : GENERIC_ID ATTR_EQ ATTR_VALUE -> ^( ATTRIBUTE GENERIC_ID ATTR_VALUE ) ;
+    # xmlParser.g:67:1: attribute : GENERIC_ID ATTR_EQ ATTR_VALUE -> ^( ATTRIBUTE GENERIC_ID ATTR_VALUE ) ;
     def attribute(self, ):
 
         retval = self.attribute_return()
@@ -732,8 +732,8 @@ class xmlParser(Parser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:67:11: ( GENERIC_ID ATTR_EQ ATTR_VALUE -> ^( ATTRIBUTE GENERIC_ID ATTR_VALUE ) )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:67:13: GENERIC_ID ATTR_EQ ATTR_VALUE
+                # xmlParser.g:67:11: ( GENERIC_ID ATTR_EQ ATTR_VALUE -> ^( ATTRIBUTE GENERIC_ID ATTR_VALUE ) )
+                # xmlParser.g:67:13: GENERIC_ID ATTR_EQ ATTR_VALUE
                 pass 
                 GENERIC_ID13=self.match(self.input, GENERIC_ID, self.FOLLOW_GENERIC_ID_in_attribute304) 
                 stream_GENERIC_ID.add(GENERIC_ID13)
@@ -743,7 +743,7 @@ class xmlParser(Parser):
                 stream_ATTR_VALUE.add(ATTR_VALUE15)
 
                 # AST Rewrite
-                # elements: GENERIC_ID, ATTR_VALUE
+                # elements: ATTR_VALUE, GENERIC_ID
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -760,7 +760,7 @@ class xmlParser(Parser):
 
                 root_0 = self._adaptor.nil()
                 # 67:43: -> ^( ATTRIBUTE GENERIC_ID ATTR_VALUE )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:67:46: ^( ATTRIBUTE GENERIC_ID ATTR_VALUE )
+                # xmlParser.g:67:46: ^( ATTRIBUTE GENERIC_ID ATTR_VALUE )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(self._adaptor.createFromType(ATTRIBUTE, "ATTRIBUTE"), root_1)
 
@@ -804,7 +804,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "endTag"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:69:1: endTag : TAG_END_OPEN GENERIC_ID TAG_CLOSE ;
+    # xmlParser.g:69:1: endTag : TAG_END_OPEN GENERIC_ID TAG_CLOSE ;
     def endTag(self, ):
 
         retval = self.endTag_return()
@@ -822,8 +822,8 @@ class xmlParser(Parser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:69:9: ( TAG_END_OPEN GENERIC_ID TAG_CLOSE )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:69:11: TAG_END_OPEN GENERIC_ID TAG_CLOSE
+                # xmlParser.g:69:9: ( TAG_END_OPEN GENERIC_ID TAG_CLOSE )
+                # xmlParser.g:69:11: TAG_END_OPEN GENERIC_ID TAG_CLOSE
                 pass 
                 root_0 = self._adaptor.nil()
 
@@ -874,7 +874,7 @@ class xmlParser(Parser):
 
 
     # $ANTLR start "emptyElement"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:71:1: emptyElement : TAG_START_OPEN GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE -> ^( ELEMENT GENERIC_ID ( attribute )* ) ;
+    # xmlParser.g:71:1: emptyElement : TAG_START_OPEN GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE -> ^( ELEMENT GENERIC_ID ( attribute )* ) ;
     def emptyElement(self, ):
 
         retval = self.emptyElement_return()
@@ -897,14 +897,14 @@ class xmlParser(Parser):
         stream_attribute = RewriteRuleSubtreeStream(self._adaptor, "rule attribute")
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:71:14: ( TAG_START_OPEN GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE -> ^( ELEMENT GENERIC_ID ( attribute )* ) )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:71:16: TAG_START_OPEN GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE
+                # xmlParser.g:71:14: ( TAG_START_OPEN GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE -> ^( ELEMENT GENERIC_ID ( attribute )* ) )
+                # xmlParser.g:71:16: TAG_START_OPEN GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE
                 pass 
                 TAG_START_OPEN19=self.match(self.input, TAG_START_OPEN, self.FOLLOW_TAG_START_OPEN_in_emptyElement340) 
                 stream_TAG_START_OPEN.add(TAG_START_OPEN19)
                 GENERIC_ID20=self.match(self.input, GENERIC_ID, self.FOLLOW_GENERIC_ID_in_emptyElement342) 
                 stream_GENERIC_ID.add(GENERIC_ID20)
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:71:42: ( attribute )*
+                # xmlParser.g:71:42: ( attribute )*
                 while True: #loop6
                     alt6 = 2
                     LA6_0 = self.input.LA(1)
@@ -914,7 +914,7 @@ class xmlParser(Parser):
 
 
                     if alt6 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:71:42: attribute
+                        # xmlParser.g:71:42: attribute
                         pass 
                         self._state.following.append(self.FOLLOW_attribute_in_emptyElement344)
                         attribute21 = self.attribute()
@@ -931,7 +931,7 @@ class xmlParser(Parser):
                 stream_TAG_EMPTY_CLOSE.add(TAG_EMPTY_CLOSE22)
 
                 # AST Rewrite
-                # elements: attribute, GENERIC_ID
+                # elements: GENERIC_ID, attribute
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -948,12 +948,12 @@ class xmlParser(Parser):
 
                 root_0 = self._adaptor.nil()
                 # 72:9: -> ^( ELEMENT GENERIC_ID ( attribute )* )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:72:12: ^( ELEMENT GENERIC_ID ( attribute )* )
+                # xmlParser.g:72:12: ^( ELEMENT GENERIC_ID ( attribute )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(self._adaptor.createFromType(ELEMENT, "ELEMENT"), root_1)
 
                 self._adaptor.addChild(root_1, stream_GENERIC_ID.nextNode())
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlParser.g:72:33: ( attribute )*
+                # xmlParser.g:72:33: ( attribute )*
                 while stream_attribute.hasNext():
                     self._adaptor.addChild(root_1, stream_attribute.nextTree())
 

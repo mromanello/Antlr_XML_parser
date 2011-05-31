@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g 2011-01-19 12:37:45
+# $ANTLR 3.1.2 xmlTreeParser.g 2011-05-31 22:54:24
 
 import sys
 from antlr3 import *
@@ -41,7 +41,7 @@ tokenNames = [
 
 
 class xmlTreeParser(TreeParser):
-    grammarFileName = "/Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g"
+    grammarFileName = "xmlTreeParser.g"
     antlr_version = version_str_to_tuple("3.1.2")
     antlr_version_str = "3.1.2"
     tokenNames = tokenNames
@@ -87,13 +87,13 @@ class xmlTreeParser(TreeParser):
 
 
     # $ANTLR start "document"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:30:1: document : element ;
+    # xmlTreeParser.g:30:1: document : element ;
     def document(self, ):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:30:10: ( element )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:30:12: element
+                # xmlTreeParser.g:30:10: ( element )
+                # xmlTreeParser.g:30:12: element
                 pass 
                 self._state.following.append(self.FOLLOW_element_in_document53)
                 self.element()
@@ -116,7 +116,7 @@ class xmlTreeParser(TreeParser):
 
 
     # $ANTLR start "element"
-    # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:32:1: element : ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* ) ;
+    # xmlTreeParser.g:32:1: element : ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* ) ;
     def element(self, ):
 
         name = None
@@ -126,8 +126,8 @@ class xmlTreeParser(TreeParser):
 
         try:
             try:
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:33:5: ( ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* ) )
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:33:7: ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* )
+                # xmlTreeParser.g:33:5: ( ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* ) )
+                # xmlTreeParser.g:33:7: ^( ELEMENT name= GENERIC_ID ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )* ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )* )
                 pass 
                 self.match(self.input, ELEMENT, self.FOLLOW_ELEMENT_in_element68)
 
@@ -137,7 +137,7 @@ class xmlTreeParser(TreeParser):
                 self.current_el = name.getText()
                             
                 #action end
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:36:13: ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )*
+                # xmlTreeParser.g:36:13: ( ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE ) )*
                 while True: #loop1
                     alt1 = 2
                     LA1_0 = self.input.LA(1)
@@ -147,7 +147,7 @@ class xmlTreeParser(TreeParser):
 
 
                     if alt1 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:37:17: ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE )
+                        # xmlTreeParser.g:37:17: ^( ATTRIBUTE attrName= GENERIC_ID value= ATTR_VALUE )
                         pass 
                         self.match(self.input, ATTRIBUTE, self.FOLLOW_ATTRIBUTE_in_element121)
 
@@ -170,7 +170,7 @@ class xmlTreeParser(TreeParser):
                         break #loop1
 
 
-                # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:45:13: ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )*
+                # xmlTreeParser.g:45:13: ( element | ^( SPACE_TOKEN token= PCDATA_TOKEN ) | ^( TEXT_TOKEN token= PCDATA_TOKEN ) )*
                 while True: #loop2
                     alt2 = 4
                     LA2 = self.input.LA(1)
@@ -182,7 +182,7 @@ class xmlTreeParser(TreeParser):
                         alt2 = 3
 
                     if alt2 == 1:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:45:14: element
+                        # xmlTreeParser.g:45:14: element
                         pass 
                         self._state.following.append(self.FOLLOW_element_in_element179)
                         self.element()
@@ -191,7 +191,7 @@ class xmlTreeParser(TreeParser):
 
 
                     elif alt2 == 2:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:46:15: ^( SPACE_TOKEN token= PCDATA_TOKEN )
+                        # xmlTreeParser.g:46:15: ^( SPACE_TOKEN token= PCDATA_TOKEN )
                         pass 
                         self.match(self.input, SPACE_TOKEN, self.FOLLOW_SPACE_TOKEN_in_element196)
 
@@ -202,7 +202,7 @@ class xmlTreeParser(TreeParser):
 
 
                     elif alt2 == 3:
-                        # /Users/56k/Documents/workspace/24-11/xml_parser/xmlTreeParser.g:48:15: ^( TEXT_TOKEN token= PCDATA_TOKEN )
+                        # xmlTreeParser.g:48:15: ^( TEXT_TOKEN token= PCDATA_TOKEN )
                         pass 
                         self.match(self.input, TEXT_TOKEN, self.FOLLOW_TEXT_TOKEN_in_element235)
 
