@@ -83,7 +83,7 @@ element
             {
             if(self.current_el.lower()=="resume" and len(self.tokens) > 0):
               self.instances[self.instance_id] = self.tokens
-              self.logger.debug("\%s",self.instances)
+              #self.logger.debug("\%s",self.instances)
             self.tokens = []
             }
         )

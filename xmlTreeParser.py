@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 xmlTreeParser.g 2011-06-01 01:09:17
+# $ANTLR 3.1.2 xmlTreeParser.g 2011-06-01 01:31:09
 
 import sys
 from antlr3 import *
@@ -255,7 +255,7 @@ class xmlTreeParser(TreeParser):
                              
                 if(self.current_el.lower()=="resume" and len(self.tokens) > 0):
                   self.instances[self.instance_id] = self.tokens
-                  self.logger.debug("%s",self.instances)
+                  #self.logger.debug("%s",self.instances)
                 self.tokens = []
                             
                 #action end

@@ -51,12 +51,13 @@ def run(i_file,o_file):
     fout.write(json.dumps(tp.instances).decode("UTF-8"))
     fout.close()
     #print(json.dumps(tp.instances))
-    pprint.pprint(tp.instances)
+    #pprint.pprint(tp.instances)
     temp = open(i_file,'r')
     for inst in tp.instances:
 		for tok in tp.instances[inst]:
 			temp.seek(tok["start"])
-			print "\"%s\" == \"%s\""%(tok["utext"], temp.read(tok["end"]-tok["start"]+1))
+			text = "\"%s\" == \"%s\""%(tok["utext"], temp.read(tok["end"]-tok["start"]+1))
+			logger.debug(text.decode('UTF-8'))
     
 
 if __name__ == "__main__":
