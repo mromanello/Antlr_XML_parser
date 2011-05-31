@@ -50,7 +50,7 @@ def run(i_file,o_file):
     fout = open(o_file,'w')
     fout.write(json.dumps(tp.instances).decode("UTF-8"))
     fout.close()
-    print(json.dumps(tp.instances))
+    #print(json.dumps(tp.instances))
     pprint.pprint(tp.instances)
     temp = open(i_file,'r')
     for inst in tp.instances:

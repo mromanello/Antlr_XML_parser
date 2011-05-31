@@ -65,6 +65,7 @@ element
                     tok1 = {}
                     idx = $token.token.text.find("&nbsp;")
                     tok1["otext"]=$token.token.text[:idx]
+                    from BeautifulSoup import BeautifulStoneSoup
                     tok1["utext"]=BeautifulStoneSoup(tok1["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
                     tok1["start"]=$token.token.start
                     tok1["end"]=$token.token.start + (idx-1)
