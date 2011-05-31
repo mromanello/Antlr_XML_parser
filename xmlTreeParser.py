@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 xmlTreeParser.g 2011-05-31 22:54:24
+# $ANTLR 3.1.2 xmlTreeParser.g 2011-06-01 00:09:04
 
 import sys
 from antlr3 import *
@@ -221,7 +221,8 @@ class xmlTreeParser(TreeParser):
                            tok["end"]=token.token.stop
                            tok["otext"]=token.token.text
                            from BeautifulSoup import BeautifulStoneSoup
-                           tok["utext"]=BeautifulStoneSoup(tok["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
+                           temp=BeautifulStoneSoup(tok["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES)
+                           tok["utext"]=temp.encode("utf-8")
                            self.tokens.append(tok);
                             # TODO: add a check for self.current_el="lang"
                           elif(token.token.text.find("&nbsp;")!= -1):

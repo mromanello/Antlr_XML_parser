@@ -56,7 +56,8 @@ element
 	                  tok["end"]=$token.token.stop
 	                  tok["otext"]=$token.token.text
 	                  from BeautifulSoup import BeautifulStoneSoup
-	                  tok["utext"]=BeautifulStoneSoup(tok["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
+	                  temp=BeautifulStoneSoup(tok["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES)
+	                  tok["utext"]=temp.encode("utf-8")
 	                  self.tokens.append(tok);
                     # TODO: add a check for self.current_el="lang"
                   elif($token.token.text.find("&nbsp;")!= -1):
