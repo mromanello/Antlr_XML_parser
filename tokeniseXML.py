@@ -1,6 +1,6 @@
 import codecs,logging,sys,pickle,pprint
 import antlr3
-import simplejson
+import json
 from xmlLexer import xmlLexer
 from xmlParser import xmlParser
 from xmlTreeParser import xmlTreeParser
@@ -48,9 +48,9 @@ def run(i_file,o_file):
     logger.info("Pickled data written to file %s"%o_file)
     """
     fout = open(o_file,'w')
-    fout.write(simplejson.dumps(tp.instances).decode("UTF-8"))
+    fout.write(json.dumps(tp.instances).decode("UTF-8"))
     fout.close()
-    print(simplejson.dumps(tp.instances))
+    print(json.dumps(tp.instances))
     pprint.pprint(tp.instances)
     temp = open(i_file,'r')
     for inst in tp.instances:
