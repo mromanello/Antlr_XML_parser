@@ -1,6 +1,6 @@
 import codecs,logging,sys,pickle,pprint
 import antlr3
-import json
+import simplejson
 from xmlLexer import xmlLexer
 from xmlParser import xmlParser
 from xmlTreeParser import xmlTreeParser
@@ -35,7 +35,7 @@ def run(i_file,o_file):
     """
 
     root = r.tree
-    print root.toStringTree()
+    #print root.toStringTree()
 
     nodes = antlr3.tree.CommonTreeNodeStream(root)
     nodes.setTokenStream(tokens)
@@ -47,17 +47,14 @@ def run(i_file,o_file):
     out.close()
     logger.info("Pickled data written to file %s"%o_file)
     """
-    fout = codecs.open(o_file,'w',encoding="utf-8")
-    fout.write(json.dumps(tp.instances))
-    fout.close()
-    #print(json.dumps(tp.instances))
-    #pprint.pprint(tp.instances)
+    open(o_file,'w').write(str(tp.instances).decode("UTF-8"))
+    print(simplejson.dumps(str(tp.instances).decode("UTF-8")))
+    pprint.pprint(tp.instances)
     temp = open(i_file,'r')
     for inst in tp.instances:
 		for tok in tp.instances[inst]:
 			temp.seek(tok["start"])
-			text = "\"%s\" == \"%s\""%(tok["utext"], temp.read(tok["end"]-tok["start"]+1))
-			logger.debug(text.decode('UTF-8'))
+			print "\"%s\" == \"%s\""%(tok["utext"], temp.read(tok["end"]-tok["start"]+1))
     
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 xmlLexer.g 2011-06-01 01:31:01
+# $ANTLR 3.1.2 xmlLexer.g 2011-07-21 11:40:21
 
 import sys
 from antlr3 import *

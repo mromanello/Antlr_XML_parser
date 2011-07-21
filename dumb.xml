@@ -1,0 +1,6 @@
+<root>
+<a>some test text</a>
+<c>some more text</c>
+<d><resume>the only text I really want to keep, you know! c&eacute;</resume></d>
+<resume>and a tricky bit, the word work&nbsp;package</resume>
+</root>

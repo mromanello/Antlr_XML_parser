@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 xmlTreeParser.g 2011-06-01 01:31:09
+# $ANTLR 3.1.2 xmlTreeParser.g 2011-07-21 11:40:23
 
 import sys
 from antlr3 import *
@@ -225,24 +225,31 @@ class xmlTreeParser(TreeParser):
                            tok["utext"]=temp.encode("utf-8")
                            self.tokens.append(tok);
                             # TODO: add a check for self.current_el="lang"
-                          elif(token.token.text.find("&nbsp;")!= -1):
-                            # 1st token
-                            tok1 = {}
-                            idx = token.token.text.find("&nbsp;")
-                            tok1["otext"]=token.token.text[:idx]
-                            from BeautifulSoup import BeautifulStoneSoup
-                            tok1["utext"]=BeautifulStoneSoup(tok1["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
-                            tok1["start"]=token.token.start
-                            tok1["end"]=token.token.start + (idx-1)
-                            self.tokens.append(tok1);
-                            # 2nd token
-                            tok2 = {}
-                            idx = token.token.text.find("&nbsp;")
-                            tok2["otext"]=token.token.text[idx+len("&nbsp;"):len(token.token.text)]
-                            tok2["utext"]=BeautifulStoneSoup(tok2["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
-                            tok2["start"]=token.token.start+idx+len("&nbsp;")
-                            tok2["end"]=token.token.stop
-                            self.tokens.append(tok2);
+                          elif(token.token.text.find(self.NBSP)!= -1):
+                              newtok={}
+                              while(token.token.text.find(self.NBSP)!= -1):
+                          	    # cycle over the token until all the NBSP entities have been removed
+                                self.logger.debug("The token %s contains %s"%(token.token,self.NBSP))
+                                idx = token.token.text.find(self.NBSP)
+                                newtok["start"]=token.token.start
+                                newtok["end"]=token.token.start + (idx-1)
+                                newtok["otext"]=token.token.text[:idx]
+                                newtok["utext"]=BeautifulStoneSoup(newtok["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
+                                before = token.token.text[:idx]
+                                self.logger.debug(before)
+                                after = token.token.text[idx+len(self.NBSP):]
+                                self.logger.debug(after)
+                                # REPAIR
+                                token.token.text = token.token.text[idx+len(self.NBSP):]
+                                token.token.start = token.token.start+idx+len(self.NBSP)
+                                self.tokens.append(newtok)
+                                newtok={}
+                            # this is the last "after" bit
+                              newtok["start"]=token.token.start
+                              newtok["end"]=token.token.start+len(token.token.text)
+                              newtok["otext"] = token.token.text
+                              newtok["utext"]= BeautifulStoneSoup(newtok["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
+                              self.tokens.append(newtok)
                                         
                         #action end
 

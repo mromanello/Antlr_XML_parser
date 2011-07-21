@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 xmlParser.g 2011-06-01 01:31:08
+# $ANTLR 3.1.2 xmlParser.g 2011-07-21 11:40:23
 
 import sys
 from antlr3 import *
@@ -645,7 +645,7 @@ class xmlParser(Parser):
                 #action end
 
                 # AST Rewrite
-                # elements: attribute, GENERIC_ID
+                # elements: GENERIC_ID, attribute
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -743,7 +743,7 @@ class xmlParser(Parser):
                 stream_ATTR_VALUE.add(ATTR_VALUE15)
 
                 # AST Rewrite
-                # elements: ATTR_VALUE, GENERIC_ID
+                # elements: GENERIC_ID, ATTR_VALUE
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
