@@ -1,4 +1,4 @@
-# $ANTLR 3.1.2 xmlTreeParser.g 2011-07-21 11:40:23
+# $ANTLR 3.1.2 xmlTreeParser.g 2011-08-10 16:54:36
 
 import sys
 from antlr3 import *
@@ -234,6 +234,7 @@ class xmlTreeParser(TreeParser):
                                 newtok["start"]=token.token.start
                                 newtok["end"]=token.token.start + (idx-1)
                                 newtok["otext"]=token.token.text[:idx]
+                                from BeautifulSoup import BeautifulStoneSoup
                                 newtok["utext"]=BeautifulStoneSoup(newtok["otext"],convertEntities=BeautifulStoneSoup.ALL_ENTITIES).encode("utf-8")
                                 before = token.token.text[:idx]
                                 self.logger.debug(before)
